@@ -1,0 +1,26 @@
+/* Copyright (c) 2018 ABI Cube */
+/* Shabnam Watson */
+
+
+--------------------
+
+EVALUATE 
+ROW("CRAZY CROSS JOIN",
+	COUNTROWS(
+		SUMMARIZE( --Groups by columns: Remember Group BY is equivalant to Distinct
+				CROSSJOIN(
+					  SELECTCOLUMNS('Garbage Carts',"Garbage Carts SRN",[Service Request Number]),
+					  SELECTCOLUMNS('Graffiti',"Grafitti SRN",[Service Request Number]),
+					  SELECTCOLUMNS('Pot holes',"Pot holes SRN",[Service Request Number]),
+					  SELECTCOLUMNS('Rodent Baiting',"Rodent Baiting SRN",[Service Request Number]),
+					  SELECTCOLUMNS('Street Lights',"Street Lights SRN",[Service Request Number])
+					  )
+				, 
+				[Garbage Carts SRN],
+				[Grafitti SRN],
+				[Pot holes SRN],
+				[Rodent Baiting SRN],
+				[Street Lights SRN]
+				)
+			)
+)

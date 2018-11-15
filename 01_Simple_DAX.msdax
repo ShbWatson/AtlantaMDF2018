@@ -1,0 +1,21 @@
+/* Copyright (c) 2018 ABI Cube */
+/* Shabnam Watson */
+
+
+Evaluate 
+UNION(
+	  ROW("Table","Garbage Carts","Row Count", COUNTROWS('Garbage Carts')), 
+
+	  ROW("Table","Graffiti","Row Count", COUNTROWS('Graffiti')) ,
+
+	  ROW("Table","Pot hols","Row Count", COUNTROWS('Pot holes')),
+
+	  ROW("Table","Rodent Baiting","Row Count", COUNTROWS('Rodent Baiting')) ,
+
+	  ROW("Table","Street Lights","Row Count", COUNTROWS('Street Lights'))
+
+)
+ORDER BY [Row Count] DESC
+
+
+
